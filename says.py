@@ -30,10 +30,8 @@ def save(msg,path):
     f.write(result)
     f.close()
     
-# 1.将wma格式文件转为pcm格式文件
+
 def get_file_content(filePath):
-    # 执行cmd命令os.system()
-    # os.system(f"ffmpeg -y  -i {filePath} -acodec pcm_s16le -f s16le -ac 1 -ar 16000 {filePath}.pcm")
     fp = open(filePath, 'rb')
     content = fp.read()
     client = AipSpeech(app_id,api_key,secret_key)
