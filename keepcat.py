@@ -18,11 +18,11 @@ userid = ''
 completed = False
 work_dir = sys.path[0]
 # 百度语音的key.
+app_id = ''
 api_key = ''
 secret_key = ''
 
 def save(msg,path):
-    app_id = '17090394'
     client = AipSpeech(app_id,api_key,secret_key)
     result = client.synthesis(msg,'zh',1,{'vol':9,'per':1})
     logging.info(path)
@@ -36,7 +36,7 @@ def get_file_content(filePath):
     # os.system(f"ffmpeg -y  -i {filePath} -acodec pcm_s16le -f s16le -ac 1 -ar 16000 {filePath}.pcm")
     fp = open(filePath, 'rb')
     content = fp.read()
-    app_id = '17090394'
+
     client = AipSpeech(app_id,api_key,secret_key)
     # 2.将音频转成文字
     res = client.asr(content, 'pcm', 16000, {

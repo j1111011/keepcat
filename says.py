@@ -18,11 +18,11 @@ userid = ''
 completed = False
 work_dir = sys.path[0]
 # 填写你申请的百度语音的key.
+app_id = ''
 api_key = ''
 secret_key = ''
 
 def save(msg,path):
-    app_id = '17090394'
     client = AipSpeech(app_id,api_key,secret_key)
     result = client.synthesis(msg,'zh',1,{'vol':9,'per':1})
     logging.info(path)

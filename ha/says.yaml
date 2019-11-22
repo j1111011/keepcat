@@ -1,0 +1,17 @@
+automation:
+ - alias: keepcat says
+   initial_state: true
+   trigger:
+     - platform: state
+       entity_id: input_text.words
+   action:
+     - service: shell_command.say
+
+input_text:
+        words:
+                name: 与猫语
+
+shell_command:
+   say: 'python3 /root/src/keepcat/says.py {{states("input_text.words")}}'
+
+
